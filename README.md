@@ -11,6 +11,7 @@
 - set the driver to 0 for RS485 over IP (requires setting the host ip as "Device0" in yasdi.ini !) or to 1 for direct connection of RS486
 - Place the yasdi.ini in the Home Assistant 'config' directory (where all your configuration.yaml) files are. The reference in the config.yaml points to that location.
 - create a 'devices' directory in the config directory (cd config => mkdir devices)
+- Einbindung klappt, wenn man dem Docker noch folgenden Befehl mitgibt: -p 24273:24273/udp \ => yasdi erstellt quasi einen UDP-Server welcher auf dem Port auf Eingang wartet.
 
 ## End of home assistant setup (the following is the standard documentation of yasdi2mqtt)
 
