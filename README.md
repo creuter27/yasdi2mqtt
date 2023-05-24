@@ -3,6 +3,15 @@
 [![Pulls on Docker Hub](https://img.shields.io/docker/pulls/pkwagner/yasdi2mqtt?color=blue)](https://hub.docker.com/r/pkwagner/yasdi2mqtt)
 [![License](https://img.shields.io/github/license/pkwagner/yasdi2mqtt?color=blue)](https://github.com/pkwagner/yasdi2mqtt/blob/master/LICENSE)
 
+## Setup as Homeassistant addon:
+- Add this repository to the custom addon repositories
+- restart home assistant
+- install the addon (shows up in the addon list now)
+- in the Configuration set the MQTT broker host (localhost without "http://"!!)
+- set the driver to 0 for RS485 over IP (requires setting the host ip as "Device0" in yasdi.ini !) or to 1 for direct connection of RS486
+- Place the yasdi.ini in the Home Assistant 'config' directory (where all your configuration.yaml) files are. The reference in the config.yaml points to that location.
+- create a 'devices' directory in the config directory (cd config => mkdir devices)
+
 `yasdi2mqtt` is a MQTT adapter for SMA inverters communicating using the `yasdi` protocol, allowing for local or IP-based communication. It fetches spot values from attached devices in a fixed interval and publishes them as JSON via MQTT.
 
 [![yasdi2mqtt](.github/assets/mock_console.gif "yasdi2mqtt")](https://hub.docker.com/r/pkwagner/yasdi2mqtt)
