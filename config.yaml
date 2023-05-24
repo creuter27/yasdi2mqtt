@@ -1,5 +1,5 @@
 name: yasdi2mqtt
-version: "alpine"
+version: "alpine2"
 slug: yasdi2mqtt
 description: Yasdi2mqtt
 url: https://github.com/creuter27/yasdi2mqtt/
