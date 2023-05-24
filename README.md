@@ -12,6 +12,8 @@
 - Place the yasdi.ini in the Home Assistant 'config' directory (where all your configuration.yaml) files are. The reference in the config.yaml points to that location.
 - create a 'devices' directory in the config directory (cd config => mkdir devices)
 
+## Home assistant setup (the folliwing is the standard documentation of yasdi2mqtt)
+
 `yasdi2mqtt` is a MQTT adapter for SMA inverters communicating using the `yasdi` protocol, allowing for local or IP-based communication. It fetches spot values from attached devices in a fixed interval and publishes them as JSON via MQTT.
 
 [![yasdi2mqtt](.github/assets/mock_console.gif "yasdi2mqtt")](https://hub.docker.com/r/pkwagner/yasdi2mqtt)
