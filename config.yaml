@@ -29,7 +29,7 @@ options:
   MQTT_PORT: 1883
   MQTT_USER: "johndoe"
   MQTT_PASSWORD: "sEcReT"
-  LOG_LEVEL: ""
+  LOG_LEVEL: "LOG_INFO"
 schema:
   YASDI_CONFIG: "str"
   YASDI_DRIVER_ID: "int"
