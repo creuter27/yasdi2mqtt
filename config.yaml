@@ -13,6 +13,9 @@ arch:
 startup: application
 ports:
   24273/udp: 24273
+  24273/tcp: 24273
+  24272/udp: 24272
+  24272/tcp: 24272
 panel_icon: mdi:solar-power
 boot: auto
 legacy: true
@@ -30,7 +33,7 @@ options:
   MQTT_PORT: 1883
   MQTT_USER: "johndoe"
   MQTT_PASSWORD: "sEcReT"
-  LOG_LEVEL: "LOG_INFO"
+  LOG_LEVEL: 3
 schema:
   YASDI_CONFIG: "str"
   YASDI_DRIVER_ID: "int"
@@ -41,7 +44,7 @@ schema:
   MQTT_PORT: "int"
   MQTT_USER: "str"
   MQTT_PASSWORD: "str"
-  LOG_LEVEL: "str"
+  LOG_LEVEL: "int"
 host_network: true
 map:
 - config:rw
