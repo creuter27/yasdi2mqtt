@@ -29,6 +29,7 @@ options:
   MQTT_PORT: 1883
   MQTT_USER: "johndoe"
   MQTT_PASSWORD: "sEcReT"
+  LOG_LEVEL: ""
 schema:
   YASDI_CONFIG: "str"
   YASDI_DRIVER_ID: "int"
@@ -39,6 +40,7 @@ schema:
   MQTT_PORT: "int"
   MQTT_USER: "str"
   MQTT_PASSWORD: "str"
+  LOG_LEVEL: "str"
 host_network: true
 map:
 - config:rw
