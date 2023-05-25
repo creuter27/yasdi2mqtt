@@ -23,6 +23,7 @@ int main(int argc, char **argv)
     char *mqtt_ssl_cert = getenv("MQTT_SSL_CERT");
     char *mqtt_user = getenv("MQTT_USER");
     char *mqtt_password = getenv("MQTT_PASSWORD");
+    char *logLevel = getenv("LOG_LEVEL");
 
     int mqtt_qos_level = 2;
     if (getenv("MQTT_QOS_LEVEL"))
@@ -30,9 +31,9 @@ int main(int argc, char **argv)
         mqtt_qos_level = strtol(getenv("MQTT_QOS_LEVEL"), NULL, 10);
     }
 
-    if (getenv("LOG_LEVEL"))
+    if (logLevel)
     {
-        log_set_level(strtol(getenv("LOG_LEVEL"), NULL, 10));
+        log_set_level(strtol(logLevel, NULL, 10));
     }
 
     log_info("Configuration | YASDI_CONFIG = %s", yasdi_config);
@@ -46,6 +47,7 @@ int main(int argc, char **argv)
     log_info("Configuration | MQTT_QOS_LEVEL = %d", mqtt_qos_level);
     log_info("Configuration | MQTT_USER = %s", mqtt_user);
     log_info("Configuration | MQTT_PASSWORD = %s", mqtt_password);
+    log_info("Configuration | LOG_LEVEL = %s", logLevel);
 
     if (!mqtt_init(mqtt_server, mqtt_port, mqtt_ssl_cert, mqtt_user, mqtt_password, mqtt_topic_prefix, mqtt_qos_level))
     {
