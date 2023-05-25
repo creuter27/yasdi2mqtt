@@ -1,5 +1,6 @@
 name: yasdi2mqtt
-version: "latest"
+#version: "latest"
+version: "alpine"
 slug: yasdi2mqtt
 description: Yasdi2mqtt
 url: https://github.com/creuter27/yasdi2mqtt/
