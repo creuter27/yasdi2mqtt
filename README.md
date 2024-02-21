@@ -13,7 +13,21 @@
 - create a 'devices' directory in the config directory (cd config => mkdir devices)
 - Einbindung klappt, wenn man dem Docker noch folgenden Befehl mitgibt: -p 24273:24273/udp \ => yasdi erstellt quasi einen UDP-Server welcher auf dem Port auf Eingang wartet.
 
-## End of home assistant setup (the following is the standard documentation of yasdi2mqtt)
+## End of home assistant setup 
+
+## Setup of EW11 RS485 to Wifi device:
+- connect directly to EW 11 Wifi
+- set "System Settings" => "WAN settings" to no DHCP, set Ip address to local IP e.g. 192.168.178.37
+- set "System Settings" => "Wifi settings" to Wifi moode "STA", scan Wifi networks, select local network and set password
+- restart the device ("Others" => "Restart")
+- connect to device through local Wifi network IP set up above.
+- set "Serial settings" to 1200, 8N1, half duplex, protocol: none, leave all others at default.
+- set "Communication settings" tab "netp" to "UDP server", "Local Port": 24272, leave all others at default.
+- restart the device ("Others" => "Restart")
+- check "Status" => "Serial Port state": you should see some values other than 0 for received bytes, sent bytes, etc.
+- check "Status" => "Communication State - 'netp'": state should be 'connected' and you should see some values other than 0 for received bytes, sent bytes, etc.
+- done
+## End of EW11 RS485 to Wifi device setup (the following is the standard documentation of yasdi2mqtt)
 
 `yasdi2mqtt` is a MQTT adapter for SMA inverters communicating using the `yasdi` protocol, allowing for local or IP-based communication. It fetches spot values from attached devices in a fixed interval and publishes them as JSON via MQTT.
 
